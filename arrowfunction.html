@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="a"></p>
+    <script>
+    /*      const sum=function(a,b){
+               return a+b;
+         }
+
+            alert(sum(1,2));
+        // arrow function
+         
+    //const sum2=(a,b)=>{ return a+b;}
+    const sum2=(a,b)=>a+b;
+    alert(sum2(10,20));
+
+
+    const check=(a)=>(a>0)?'postive':'negative';
+
+            document.write(check(5));
+
+    const max=(a,b,c)=>{
+        let max;
+           i  {
+                max=c;
+           }
+           //return max;
+           document.getElementById('a').innerHTML=max;
+    }
+
+    max(1,2,3);
+ */
+    const func=()=> this;
+    console.log(func());
+
+    const obj={
+          a:20,
+          b:30,
+          sum3:()=>obj.a+obj.b
+    }
+         
+    console.log(obj.sum3.call(obj));
+    let ar=[10,20,30,50];
+
+            alert(ar.find((value)=>value>10));
+            alert(ar.filter((value)=>value>10));
+
+    </script>
+</body>
+</html>

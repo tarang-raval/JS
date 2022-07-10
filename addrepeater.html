@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <button id="add()" type="button" class="btn btn-primary" onclick="add()"> Add </button>
+      <div class="alert alert-primary" role="alert" id="alert" draggable="true" ondragstart="dragStart(event)" >
+        <strong>primary</strong>
+      </div>
+    <div id="p" class="border p-5" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    </div>
+    <a href="windowopen.html">windowopen</a>
+    <button onclick="history.forward()">forward</button>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+           function add(){
+
+            var alert2=document.getElementById('alert');
+
+            var alert3
+            alert3=alert2.cloneNode(true);
+            alert3.querySelector('strong').innerHTML='danger';
+
+
+            
+            
+            document.getElementById('p').append(alert3)
+
+            var ob={
+                a:10
+            }
+            var ob2=ob;
+            ob2.a=60;
+             alert(ob.a);
+             //location.assign('http://127.0.0.1:5500/addelement.html');
+             window.open('http://127.0.0.1:5500/addelement.html','name','width=600px;height=900px');
+           }
+
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+           function dragStart(e){
+            e.dataTransfer.setData("Text", e.target.id);
+           }
+           function drop(e){
+            var data = e.dataTransfer.getData("Text");
+            e.target.append(document.getElementById(data));
+           }
+           
+           //https://www.w3schools.com/js/js_window_location.asp
+           //protocol:// domain name/path \
+
+           console.log(location.protocol);
+           console.log(location.hostname);
+           console.log(location.pathname);
+           console.log(location.port);
+           console.log(location.href);
+          
+
+    </script>
+  </body>
+</html>

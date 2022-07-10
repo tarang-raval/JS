@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+                 
+                 var json={"name":"name","age":12,"date_\"of_birth":"2022-05-05"};
+                   
+                 alert(json.age);
+
+                 /*
+                         string
+                         number
+                         boolean
+                         array
+                         null
+
+                 */
+                         var student=[
+                            {"name":"abc","age":12,
+                            "birth_date":'2022-05-05',
+                            "result":[
+                                        {"std":"1st","mark":12} ,  
+                                        {"std":"1st","mark":12} ,  
+                                        {"std":"1st","mark":12} ,  
+                                        {"std":"1st","mark":12} ,  
+                                    ],
+                            "resultavg":{"avg":80},
+                            "resultavg":[5,6,9,7,89],
+                            },
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                            {"name":"abc","age":12,"birth_date":'2022-05-05'},
+                        ];
+                     console.log(student);
+                    alert(student[1].name);
+                    alert(student[0].result[0].std);
+
+                    for(let x in student[0]){
+
+                        document.write( student[0][x].constructor);
+                        document.write('<br/>');
+
+                    }
+
+             let user=[
+             {
+                "id":1,
+                "fname":"h",
+                "lname":"",
+                "age":"",
+                "dateofbirth":"",
+                "email":"",
+                "password":"",
+                /* "role":[
+                     {"id":1,"role_name":"admin"}
+                ] */
+                
+                "role":['admin']
+
+             },
+             {
+                "id":1,
+                "fname":"h",
+                "lname":"",
+                "age":"",
+                "dateofbirth":"",
+                "email":"",
+                "password":"",
+                /* "role":[
+                     {"id":1,"role_name":"admin"}
+                ] */
+                
+                "role":['admin']
+
+             }
+             ]
+
+
+
+
+             var str=`{"name":"sss"}` ;
+
+
+              let jstr=JSON.parse(str);
+               console.log(jstr);
+               console.log(JSON.stringify(jstr));
+
+            
+    </script>
+</body>
+</html>

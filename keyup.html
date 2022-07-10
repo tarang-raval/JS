@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <input type="text" name="" onkeyup="copytext(this)" onkeypress="checkinput(event)" >
+     <p id="p"></p>
+<a href="https://google.com" onclick="stopclick(event)">Click</a>
+<a href="javascript:void(0)"></a>
+<button onclick="stopclick(event)">Click</button>
+     <script>
+
+            function isNumber(elem){
+                   let rgg=/^[0-9]+$/g;
+                   if(elem.value!="" && !rgg.test(elem.value)){
+                    document.getElementById('p').innerHTML="Please eneter only number"
+                   }else{
+                    document.getElementById('p').innerHTML="";  
+                   }
+            }
+             function copytext(elem){
+                  document.getElementById('p').innerHTML=elem.value;
+             }
+             function checkinput(event){
+                 let keycode=event.which;
+                 console.log(event.altKey);
+                 if(event.shiftKey){
+                     alert('you are pressed shift key');
+                 }
+                 if(event.ctrlKey){
+                     alert('you are pressed control key');
+                 }
+                 if(event.altKey){
+                     alert('you are pressed alt key');
+                 }
+                 if(keycode>=48 && keycode<=57){
+                     return true;
+                 }
+                 event.preventDefault();
+                 //return false;
+                    
+             }
+             function stopclick(e){
+             console.log(e.which);
+             alert(e.type)
+             alert(e.target)
+             e.target.innerHTML="clicked"
+                  e.preventDefault();
+             }
+     </script>
+</body>
+</html>

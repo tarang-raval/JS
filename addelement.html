@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .back{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+        <div id="box"> <!--  parent -->
+            <span></span>
+            <h2 id="h2" class="abc" title="heading">Heading</h2>
+            <div><span>welcome</span></div>
+        </div>
+        <button onclick="addElement()">Add Element</button>
+        <button onclick="childelement()">Child Element</button>
+        <button onclick="sibling()">sibling</button>
+        <script>
+            function addElement(){
+                    document.getElementById('box').innerHTML=document.getElementById('box').innerHTML+'<p>Helooo</p>';
+
+                    alert(document.getElementById('box').parentNode.parentNode.parentNode)
+                    alert(document.getElementById('box').parentElement);
+                    alert(document.getElementById('h2').closest('#box'));
+                    document.getElementById('box').parentNode.classList.add('back');
+
+            }
+            function childelement(){
+                    console.log(document.getElementById('box').childNodes);
+                    console.log(document.getElementById('box').children);
+                    console.log(document.getElementById('box').childNodes[3]);
+                    console.log(document.getElementById('box').firstChild);
+                    console.log(document.getElementById('box').lastChild);
+                    console.log(document.getElementById('box').children[1]);
+                    console.log(document.getElementById('box').children[1]);
+                    console.log(document.getElementById('box').childElementCount);
+                    
+
+
+            }
+
+            function sibling(){
+                /* console.log(document.getElementById('h2').nextElementSibling);
+                console.log(document.getElementById('h2').previousSibling);
+                console.log(document.getElementById('h2').previousElementSibling); */
+               /*  console.log(document.getElementById('h2').attributes);
+                console.log(document.getElementById('h2').ATTRIBUTE_NODE);
+                console.log(document.getElementById('h2').attributes.class.nodeValue);
+                console.log(document.getElementById('h2').textContent); */
+                var box=document.getElementById('box');
+                console.log(box.querySelectorAll('span'));
+                console.log(box.hasChildNodes());
+                console.log(box.hasAttribute('id'));
+                console.log(box.querySelectorAll('h2').length);
+                
+            }
+        </script>
+</body>
+</html>

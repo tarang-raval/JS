@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,th{
+            border:1px solid;
+            border-collapse: collapse;;
+        }
+        td{
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="name" placeholder="name">
+    <br/>
+    <br/>
+    <input type="email" id="email" placeholder="email">
+     <br/>
+    <input type="button" onclick="addtotable()" value="add">
+
+    <a href="//google.com"  id="a">Google</a>
+    <div id="table"></div>
+    <script>
+        /*
+                var ar=[
+                        ['abc','abc@gmail.com'],
+                        ['abc','abc@gmail.com'],
+                        ['abc','abc@gmail.com'],
+                        ['abc','abc@gmail.com'],
+                        ['abc','abc@gmail.com'],
+                        ['abc','abc@gmail.com'],
+                ]
+        */
+       let ar=[];
+         function addtotable(){
+             let name=document.getElementById('name').value;
+             let email=document.getElementById('email').value;
+              let check=0;
+                    for( let y of ar){
+                          if(y[1]==email){
+                              check=1;
+                          }
+                    }
+                if(check==0){
+                    ar.push([name,email]);
+                }
+             var string ="<table>";
+                for(let x of ar){
+                    string+='<tr><td>'+ x[0]+'</td><td>'+x[1]+'</td></tr>';
+                }
+
+                string +="</table>";
+
+                document.getElementById('table').innerHTML=string;
+         }
+
+
+         document.getElementById('a').addEventListener('click',
+         function(event){
+            event.preventDefault();
+         });
+
+         /*
+                ar=[
+                    ['a','abc@gmail.com']
+                    ['b','abc@gmail.com']
+                    ['b','abc2@gmail.com']
+                ]
+         */
+
+
+
+         var ar2=[1,6,5,9,5];
+         // return the index number  -1
+         alert(ar2.indexOf(5));
+         alert(ar2.lastIndexOf(5));
+         alert(ar2.findIndex(function(value){
+                return (value>10);
+         }));
+
+
+
+    </script>
+
+</body>
+</html>

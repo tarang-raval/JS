@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <button onclick="add()">Add</button>
+
+    <input type="text" placeholder="serach" id="search" onkeyup="filter()"> 
+    <div id="ans"></div>
+
+    <script>
+             let namr=[];
+            function add(){
+                    var name=document.getElementById('name').value;
+                    if(name!=""){
+                        namr.push(name);
+                    }
+                    var str='';
+                 namr.forEach(function(value){
+                        str+='<br/>'+value;
+                 });
+                 document.getElementById('ans').innerHTML=str;
+            }
+            function filter(){
+                    var name=document.getElementById('search').value;
+                        
+                    var n=[];
+                    n=namr.filter(function(value){
+
+                        return value.indexOf(name)>-1;
+
+                    });
+
+
+        
+                    var str='';
+                 n.forEach(function(value){
+                        str+='<br/>'+value;
+                 });
+                 document.getElementById('ans').innerHTML=str;
+            }
+            
+    </script>
+</body>
+</html>

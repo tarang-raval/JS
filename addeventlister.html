@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button   id="btn">Button</button>
+
+    <div style="padding:20px; border: 1px solid green;" id="box">
+        <img id="img" src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-rouge.png" width="100">
+    </div>
+    <script>
+        document.getElementById('btn').addEventListener('click',function(e){
+
+            alert(e.target.tagName);
+        });
+        document.getElementById('btn').addEventListener('click',function(e){
+
+            alert(e.target.tagName);
+        });
+        document.getElementById('box').addEventListener('mouseover',function(e){
+
+             this.style.border='2px solid red';
+             alert(this.tagName);
+        },true);
+        document.getElementById('img').addEventListener('mouseover',function(e){
+
+            this.src='https://freeiconshop.com/wp-content/uploads/edd/image-outline-filled.png';
+            //e.stopPropagation();
+            alert(this.tagName);
+            },true);
+            document.getElementById('box').addEventListener('mouseout',function(e){
+
+this.style.border='2px solid green';
+});
+document.getElementById('img').addEventListener('mouseout',function(e){
+
+this.src='https://icones.pro/wp-content/uploads/2021/06/icone-d-image-rouge.png';
+});
+
+
+    </script>
+</body>
+</html>

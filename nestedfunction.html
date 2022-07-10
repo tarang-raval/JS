@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function number(n1,n2){
+        // let n1=10;
+        // let n2=100;
+                return function sum(){
+                        
+                     let c=n1+n2;
+                     return c;
+                }
+            
+                
+        }
+
+        let d=function(n1,n2){
+        // let n1=10;
+        // let n2=100;
+                return function sum(){
+                        
+                     let c=n1+n2;
+                     return c;
+                }
+            
+                
+        };
+        alert(number(20,60)());
+        alert(d(10,20)());
+        // alert(c());
+
+        let add=(function(){
+             let counter=0;
+              return function plus(){
+                counter++;
+                
+                document.write(counter);
+              }
+              
+        })();
+        add();
+        add();
+        add();
+        add();
+    </script>
+</body>
+</html>

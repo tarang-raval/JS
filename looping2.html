@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="getdivisior()">Get Divisor list</button>
+    <div id="ans"></div>
+
+
+    <script>
+        function getdivisior(){
+            let num=Number(document.getElementById('input').value);
+             
+            //1 - n
+            a=10;
+            a=60;
+            a=90;
+            let string='<ul>';
+
+            for(let i=1;i<=num;i++){
+                  
+                if(num%i==0){
+                      
+                    string+= '<li>'+i+'</li>';
+                }
+            }
+            string+='</ul>'
+            document.getElementById('ans').innerHTML=string;  
+        }
+
+        document.write('<br/>=====================nested Loop================<br/>');
+
+        for(let i=0;i<5;i++){
+             for(let j=0;j<5;j++){
+                document.write('#')     
+             }
+            document.write('<br/>')
+        }
+        
+        document.write('<br/>=====================nested Loop================<br/>');
+
+        /*
+            *
+            **
+            ***
+            ****
+            *****
+
+
+         */ 
+
+        for(let i=1;i<=5;i++){   // i=1  2
+             for(let j=1;j<=i;j++){  // j<=1 2
+                document.write('*')     
+             }
+            document.write('<br/>')
+        }
+        for(let i=4;i>1;i--){   // i=1  2
+             for(let j=1;j<=i;j++){  // j<=1 2
+                document.write('*')     
+             }
+            document.write('<br/>')
+        }
+        document.write('<br/>=====================nested Loop================<br/>');
+        for(let i=5;i>=1;i--){   // i=1  2
+             for(let j=1;j<=i;j++){  // j<=1 2
+                if(i%2==0){
+                document.write('*')     ;
+                }else{
+                    document.write('#')     ;
+                }
+             }
+            document.write('<br/>')
+        }
+        document.write('<br/>=====================nested Loop================<br/>');
+        let k=1;
+        for(let i=5;i>=1;i--){   // i=1  2
+
+            for(let l=1;l<i;l++){
+                document.write('&nbsp;&nbsp;')     ;    
+            }
+             for(let j=5;j>=i;j--){  // j<=1 2
+                //if(i%2==0){
+                document.write(j)     ;
+                
+                /* }else{
+                    document.write('#')     ;
+                } */
+             }
+            document.write('<br/>');
+        }
+
+
+
+    </script>
+</body>
+</html>

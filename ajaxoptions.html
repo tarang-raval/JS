@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="category">
+
+    </select>
+    <div id="page">
+
+    </div>
+    <script>
+         function callcategories(){
+                 const xhttp = new XMLHttpRequest();
+                    xhttp.onload = function() {
+                        console.log(xhttp.statusText);
+                        console.log(xhttp.status);
+                        console.log(xhttp.onreadystatechange);
+                            if(xhttp.status ==200 && xhttp.readyState==4){
+                            let response=this.responseText;
+                            response=JSON.parse(response);
+                                if(typeof response=='object'){
+                                    str='';
+                                    for(let x of response){
+                                            str+=`<option value="${x.id}">${x.name}</option>`;
+                                    }
+                                    document.getElementById('category').innerHTML=str;
+                                }
+                            }
+                        }
+                    xhttp.open("GET", "http://localhost/js/js9pmnew/country.php", true);
+                    xhttp.send();
+         }
+         callcategories();
+    </script>
+</body>
+</html>

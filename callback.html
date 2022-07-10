@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <p id="p"></p>
+    <script>
+             function sum(n1,n2,calback){
+                 let sum=n1+n2;
+                 calback(sum)
+             }
+
+       
+
+             function display1(ans){
+                 document.getElementById('input').value=ans;
+             }
+
+             function display2(ans){
+                 document.getElementById('p').innerHTML=ans;
+             }
+             let sum1=sum(10,20,display1);
+              //display1(sum1);
+             let sum2=sum(30,20,display2);
+              //display2(sum2);
+
+
+              function ajaxcall(){
+                /*
+                    request 
+                    url : https://random-d.uk/api/v2/random
+                    method: get
+                    resposne 
+                    response : 
+                                            {
+                        "message": "Powered by random-d.uk",
+                        "url": "https://random-d.uk/api/69.jpg"
+                        }
+                */
+
+                const  xmlhttp=new XMLHttpRequest();
+
+                xmlhttp.onload=function(){
+                         let ob=JSON.parse(this.responseText);
+                         //document.getElementById('img').src=ob.url;
+                         display(ob.url);
+
+                }
+                
+                xmlhttp.open('GET','https://random.dog/woof.json?q=js');
+                //xmlhttp.setRequestHeader('Access-Control-Allow-Origin','127.0.0.1:5500');
+                xmlhttp.send();
+               
+
+        }
+
+        function display(url){
+            alert(url);
+        }
+        ajaxcall();
+        display('eual call');
+        setTimeout(display,10000);
+
+    </script>  
+    
+</body>
+</html>

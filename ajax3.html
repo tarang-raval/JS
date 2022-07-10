@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+     <head>
+     </head>
+     <body>
+        <button onclick="loadDoc()">Get Image</button>
+        <button onclick="loadDoc2()">Get Image</button>
+        <img src="" id="img" style="max-width:300px">
+        <div id="doc"></div>
+        <script>
+                        // request
+                    // url
+                    // method
+                    // params/ questring
+
+                    //respone 
+                    // html, file, json,text
+
+             function loadDoc() {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload=function(){
+                    if(this.status==200 && this.readyState==4)
+                    {
+                      
+                      let js=JSON.parse(this.responseText);
+                       document.getElementById('img').src=js.message;
+                    }
+                      
+                }
+
+                xhttp.open('GET','https://dog.ceo/api/breeds/image/random');
+                xhttp.send();
+                
+                }
+             function loadDoc2() {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload=function(){
+                   
+                      document.getElementById('doc').innerHTML=this.responseText;
+                     
+                   
+                      
+                }
+
+                xhttp.open('GET','json2_1.html');
+                xhttp.send();
+                
+                }
+        </script>
+     </body>
+</html>

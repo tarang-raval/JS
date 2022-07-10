@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form id="form">
+            <div>
+                <input type="text" name="fullname">
+            </div>
+            <input type="email" name="email">
+            <input type="hidden" name="index" >
+            <input type="submit"  name="submit" onclick=" return addData()" value="add" >
+            <input type="submit"  name="submit" onclick=" return updateData()" value="update" style="display:none ;" >
+        </form>
+        <table id="table">
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <script>
+
+            const validate={
+                 isValid:1,
+                 element:null,
+                message:{"Required":"This field is required"},
+                 required:function(){
+                    
+                        if(this.element!=null){
+                             if(this.element.value.trim()=="" || this.element.value=="undfined"){
+                                    this.errorPlacement(this.message.Required);
+                                    
+                             }
+                        }
+                 },
+                 errorPlacement:function(message=''){
+                    
+                    if(this.element!=null){
+                        if(this.element.nextElementSibling!=null && this.element.nextElementSibling!='undefined' &&  this.element.nextElementSibling.tagName=="SPAN"){
+                            this.element.nextElementSibling.innerHTML= message;  
+                        }else{
+                            let span=document.createElement('span');
+                            span.innerHTML=message;
+                            this.element.parentElement.append(span);
+                        }
+                        
+                    }
+                 } ,
+                 valid:function() {
+                    //this.required();
+                     return (this.isValid==1)?false:true;
+                 }
+
+            }
+            let jsar=[];
+             function addData(){
+               // e.preventDefault();
+
+                let name=document.querySelector('input[name="fullname"]');
+                let email=document.querySelector('input[name="email"]');
+                validate.element=name
+                validate.required();
+
+               // if(validate.valid()){
+                    var ob={"fullName":name.value,"email":email.value};
+                    jsar.push(ob);
+                    document.getElementById("form").reset();
+                    localStorage.setItem('data',JSON.stringify(jsar));
+                    display();
+               // }
+                return false;
+             }
+
+             function display(){
+            let data=localStorage.getItem('data');
+            debugger
+            if(data!=null && data.length>0){
+                jsar=JSON.parse(data)
+            }
+                str='';
+                 if(jsar.length>0){
+
+                          for(let x in jsar){
+                                     str+=`<tr><td>${jsar[x].fullName}</td><td>${jsar[x].email}</td><td><button onclick="editrow(${x})">Edit</button><button onclick="deleterow(${x})">Delete</button></td></tr>`;               
+                             }
+                document.querySelector('#table>tbody').innerHTML=str;
+                 }else{
+                    document.querySelector('#table>tbody').innerHTML='';
+                 }
+             }
+             display();
+
+
+             function editrow(index){
+               
+                    if( index==null || index=='undefined'){
+                            return false;
+                    }
+                let data=jsar[index];
+
+                let name=document.querySelector('input[name="fullname"]');
+                let email=document.querySelector('input[name="email"]');
+                let inputhidden=document.querySelector('input[name="index"]');
+                document.querySelector('input[value="add"]').style.display="none";
+                document.querySelector('input[value="update"]').style.display="block";
+                
+                name.value=data.fullName;
+                email.value=data.email;
+                inputhidden.value=index;
+
+
+
+             }
+
+             function updateData(){
+               
+                let name=document.querySelector('input[name="fullname"]');
+                let email=document.querySelector('input[name="email"]');
+                let index=document.querySelector('input[name="index"]').value;
+                if(index!="" && index!="undefined" && jsar[index] ){
+
+                    
+
+                    jsar[index]={"fullName":name.value,"email":email.value};
+
+                    document.getElementById("form").reset();
+                    localStorage.setItem('data',JSON.stringify(jsar));
+                    document.querySelector('input[value="add"]').style.display="block";
+                    document.querySelector('input[value="update"]').style.display="none";
+                    display();
+                }
+               
+
+               // if(validate.valid()){
+                   
+               // }
+                return false;
+             }
+             function deleterow(index){
+                debugger
+                if( index==null || index=='undefined'){
+                            return false;
+                }
+
+                if(jsar[index]){
+                        jsar.splice(index,1);
+                        localStorage.setItem('data',JSON.stringify(jsar));
+                        display();
+                }
+
+                 
+             }
+        </script>
+</body>
+</html>

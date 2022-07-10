@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p"></p>
+    <script>
+        const a=[20,30,40,50,60];
+
+            /* for(let i=0;i<a.length;i++){
+                    a[i]
+            } */
+
+        
+            var str='';
+            a.forEach(function(value,i,array){
+                    str+='<br/>'+value;
+            }); 
+
+            document.getElementById('p').innerHTML=str;
+
+        const b=[[2,4],[6,9],[30],[1,6],[9]];
+         for(let i=0;i<b.length;i++){
+                for(let j=0;j<b[i].length;j++){
+
+                    b[i][j];
+                }
+         }
+
+         str='';
+         var upar=[];
+         b.forEach(function(value){
+
+            str+="<br/>"+value[1];
+            upar.push(value[1]);
+           /*  value.forEach(function(v){
+                     str+='<br/>'+v;
+            })  */ 
+         });
+         document.getElementById('p').innerHTML=str;
+
+
+         var c=b.map(function(value){
+                 return value[1];
+         });
+         console.log(c);
+         var c=b.filter(function(value){
+                 return value[1];
+         });
+         console.log(c);
+
+
+
+
+         const d=[20,20,30,40,90,20,60,30,40];
+
+          let newar=[];
+          d.forEach(function(value){
+                if(newar.indexOf(value) == -1){
+                    newar.push(value);
+                }
+          });
+          console.log(newar);
+          newar=[]
+          var t =d.map(function(value){
+                if(newar.indexOf(value) == -1){
+                    newar.push(value);
+                }
+                return value;
+          });
+          console.log(newar);
+          
+
+            /*
+            [10,20,10,30,10,20]
+
+                10,0
+                 indexOf(10) ==0
+
+            */
+          
+          var t =d.filter(function(value,index){
+
+                 let total=d.reduce(function(total,v,key){
+                     console.log(total+''+value+'='+v+'/'+index+'='+key);
+                       if(value==v && index!=key){
+                           total++;
+                       }
+                       return total
+                 },0);
+                 return (total==1);
+
+                /* if(d.indexOf(value) == -1){
+                    newar.push(value);
+                }*/
+                
+          });
+          console.log(t);
+
+
+
+          let total=d.reduce(function(total,v,key){
+                    
+                            if(total.indexOf(v)==-1){
+                                     total.push(v)
+                            }
+                       return total
+                 },[]);
+            console.log(total);
+
+
+
+
+    </script>
+</body>
+</html>

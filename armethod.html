@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ar=[1,5,9,6,9,9,86,76,9];
+        //ar[0]
+
+        console.log(ar.indexOf(9)) // - index
+        console.log(ar.includes(9))  // boolean
+
+        console.log(ar.lastIndexOf(9));
+         console.log(ar.indexOf(9,3)) // - index
+
+         console.log(ar.filter(function(value){
+                 return value==9
+         }));
+
+         console.log(ar.findIndex(function(value){
+                 return value>=5
+         }));
+
+            // foreach
+        let a=[];
+        let b=[];
+            ar.forEach(function(value,index){
+                if(a.includes(value*2)===false){
+                    b.push(value);
+                     a.push(value*2);  
+                }
+            });
+
+        console.log(a);
+        console.log(b);
+
+
+        let c=ar.map(function(value){
+                return value*2;
+        });
+
+        console.log(c);
+
+
+        let d=ar.reduce(function(total,value){
+                      total.push(value);
+                      return total;
+        },[]);
+
+        
+        let e=ar.reduce(function(total,value){
+                if(total.indexOf(value)==-1){
+                    total.push(value);
+                }
+                    
+                return total;
+        },[]);
+        e.forEach(function(v){
+                 let c=ar.filter(function(value){
+                     return value==v;
+                 });
+                
+                 console.log(`${v} number of time ${c.length}`)
+        });
+
+
+
+
+
+        console.log(d);
+
+    </script>
+</body>
+</html>

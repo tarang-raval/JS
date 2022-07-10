@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="p" data-id="1" date-name="ss"> helooo</p>
+    <img id="i" src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80" width="100" />
+
+
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <!--  
+
+
+        <starttag name="value" name="value"> html content</endtag>
+
+            <img src="" />
+      -->
+
+
+        <script>
+                // varaible
+                /*
+                     let  variablename=value;
+
+                     var   variablename=value;
+
+                */
+                    
+                let a =10;
+                var b;
+
+                    //  redeclaration variable let is not allowed
+                    //  redeclaration variable var  is allowed
+                    var b=10;
+
+                    let e=30;  // global varible
+                    {
+                        var d=10;
+                          e=60;  // block scop variable
+                        const v=20;
+                    }
+
+            // constant
+            //const v=20;
+
+            //v=20;
+            
+
+
+              //+ concation and addition
+              document.write(10+20);
+              document.write('<br/>');
+              
+              document.write('10'+20);
+
+              /*    
+                         console.log('ddd')
+                         alert('he')
+
+
+              */
+              console.log('ddd');
+              alert('he');
+
+                /*
+                        Dom Object
+
+
+                        // selector
+                             id, class, tagname
+                             id, className,
+
+                getElementById
+
+
+                camel case
+
+
+                */
+
+                console.log(document.getElementById('p').innerHTML);
+                console.log(document.getElementById('p').id);
+                console.log(document.getElementById('p').getAttribute('data-id'));
+                console.log(document.getElementById('i').src);
+        
+                    console.log(document.getElementsByClassName('text'));
+
+
+
+                    /*
+                         let variable=[];
+
+
+                    */
+
+                        let v=[1,2,6.56,true,'gg'];
+
+
+                        alert(v.toString());
+                        document.write(v.join('<br/>'));
+
+
+                 // iteratable object
+
+                  for(let x of v){
+
+                    console.log(x);
+                  }
+                  let text=document.getElementsByClassName('text');
+                  //text[0].innerHTML="fffff";
+                  for(let x of text){
+                    x.innerHTML="fffff";
+                  }
+
+                  let div=document.getElementsByTagName('div');
+                    console.log(div);
+
+
+                    /*
+                        
+                    querySelector() first element
+                    querySelectorAll() all element
+                    */
+                   console.log(document.querySelector('.text'));
+                   console.log(document.querySelectorAll('.text'));
+
+
+
+                    function functionname(p,a){
+
+                        return a;
+                    }
+                    
+/*                     const d=function(){
+
+                    }
+
+ */
+                    function sum(a,b){
+                         return a+b;
+                    }
+                    let q=sum(10,2);  //12
+
+                    // arrow function
+
+                    const sum2=(a,b)=>a+b;
+                    const sum3=(a,b)=>{
+                        return a+b
+                    };
+
+                    alert(sum2(50,60));
+
+
+
+
+
+                   // object 
+                    let c={
+                        peropertyname:'value',
+                        fun:function(){
+
+                        }
+                        
+                    }
+
+                    // objectname.propertyname
+                    // objectname['propertyname']
+
+                    alert(c.peropertyname);
+                    alert(c.fun());
+                        c.peropertyname='aaa';
+
+                  // 
+                  a=10;
+                  b=a;
+                  b=20;
+            let ob=c;   // refrence
+             ob.peropertyname="sssssss";
+             alert(c.peropertyname);
+
+
+
+             //    spread operator
+             // {...obname}
+
+             let ob2={...c};
+              ob2.peropertyname="5787854784378";
+
+              alert(c.peropertyname);
+              alert(ob2.peropertyname);
+
+
+              const person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 50,
+                eyeColor: "blue"
+                };
+
+         // for( let c in objectname ){}
+
+         for(let c in person){
+            document.write('<br/>');
+            document.write(c+':'+person[c]);
+         }
+
+            var s="jhs' \"jdfjf "+
+            "jhvh "+
+            "fff"+a+"s";
+
+            // Template Literals
+
+         
+            var s=`hdhfhjkhf "dfjhsfbdg" sdufhksdf 
+            ksdfgjndf
+            ${a}
+            ${a+20}
+            ${(a>0)?'positive':'negative'}
+            gfdjgb
+            fdghfd
+            ghfdg`+'sdfsdbfs';
+            document.write('<br/>');
+            document.write(s);
+
+
+
+        </script>
+        <script src="main2.js"> </script>
+</body>
+</html>

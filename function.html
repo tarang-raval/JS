@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validate(event)" id="forms">
+        <div>
+        <input type="text" name="fname" id="fname">
+        <span></span>
+        </div>
+        <div>
+        <input type="text" name="lname" id="lname">
+        </div>
+        <div>
+        <input type="text" name="email" id="email">
+        </div>
+        <input type="submit"  name="submit" value="submit">
+    </form>
+    <script>
+         function is_required(element){
+                
+             return element.value.trim()=='';
+
+         }
+         function showError(element,msg){
+              
+             let next =element.nextElementSibling;
+                if(next && element.nextElementSibling.nodeName.toLowerCase()=='span'){
+                    element.nextElementSibling.innerHTML=msg;
+                }else{
+                    let span=document.createElement('span');
+                    span.innerHTML=msg;
+                    element.parentNode.append(span);
+
+                }
+         }
+         function required(element){
+                
+            if(element.value.trim()==''){
+                //alert(element.name+' error');
+                showError(element,element.name+' error');
+                     return true;
+            }
+                return false;
+   
+            }
+         document.getElementById('fname').addEventListener('blur',function(){
+
+            alert(is_required(this));
+         });
+
+
+         function  callback(callb){
+            return callb();
+         }
+
+         function validate(event){
+                    event.preventDefault();
+
+                    let name= document.getElementById('fname');
+                   let lname= document.getElementById('lname').nextElementSibling;
+
+
+                   validate={
+                        fname:'required',
+                        lname:'required',
+                        email:'required',
+                   }
+
+                   for(let x in validate){
+                        
+                        let element=document.getElementById(x);
+                        console.log(validate[x].split('|'));
+                        (window[validate[x]](element))
+
+                        
+                        /* ${validate[x](element)}; */
+
+                   }
+                
+                    /* if(is_required(name)){
+                                 alert('name  is reuired');
+                    }
+                    if(is_required(lname)){
+                                 alert('name  is reuired');
+                    } */
+
+
+
+
+                    return false;
+         }
+         
+
+    </script>
+</body>
+</html>

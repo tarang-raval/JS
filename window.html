@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="open2()">Open</button>
+    <button onclick="close2()">Close</button>
+    <button onclick="redirect()">redirect</button>
+
+
+
+    <a href="history.html">History</a>
+    <button onclick="history.forward()">forward</button>
+    <script>
+        let win;
+        alert(window.location.protocol);
+        alert(window.location.hostname  );
+        function open2(){
+            win=window.open('https://www.google.com', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes,toolbar=yes');
+        }
+        function close2(){
+            win.close();
+        }
+        function redirect(){
+             // window.location.href='https://www.google.com';
+             //location.reload(true);
+             location.assign('https://www.google.com');
+        }
+
+        ///   https://www.w3schools.com/js/js_window_location.asp
+        ///   https://css.w3schools.com/js/js_window_location.asp
+        //    protocol:// domain name/ subdomain/ path of script/  filename
+
+    </script>
+</body>
+</html>

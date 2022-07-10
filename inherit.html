@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+             class N{
+                   //#privatea=10;
+
+                    a=10;
+                    b=20;
+             }
+
+
+             class Sum extends N{
+
+                sum(){
+                     alert(this.a+this.b);
+                }
+             }  
+
+             class Multipication extends Sum{
+                  multipication(){
+                    alert(this.a*this.b);
+                  } 
+                  sum(){
+                     alert('helloo');
+                }
+                sum(){
+                     alert('helloo2');
+                }    
+             }
+
+             class Division extends Multipication{
+                  division(){
+                    alert(this.a*this.b);
+                  }     
+             }
+
+             class Calc extends Division{
+
+             }
+
+             let c=new Calc();
+
+             c.sum();
+
+
+             /*
+                 public   - default
+                 private
+                 protected
+
+             */
+
+
+            
+        </script>
+</body>
+</html>

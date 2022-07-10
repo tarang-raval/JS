@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+        <p>dfsdfsd</p>
+        <div id="insbefore">Insert Before</div>
+    </div>
+    <button onclick="callfun()">Add</button>
+    <button onclick="removeelement()">Remove</button>
+
+    <button onclick="addinput()">add INput</button>
+    <form id="form">
+        <input type="text" name="name">
+    </form>
+    <script>
+        function callfun(){
+                //document.getElementById('div').innerHTML="<p>dddd</p>";
+                var tag=document.createElement('h2');
+                var text=document.createTextNode('heloooo');
+
+                // <h2>text</h2>
+                tag.append(text);
+                //tag.innerHTML=''
+                tag.style.color="red";
+                tag.style.fontWeight="bold";
+                document.getElementById('div').append(tag);
+
+                var tag2=document.createElement('h2');
+                var text2=document.createTextNode('heloooo');
+
+                let ins=document.getElementById('insbefore');
+                document.getElementById('div').insertBefore(text2,document.getElementById('div').children[1]);
+
+
+        }
+        function removeelement(){
+
+            //document.getElementById('div').children[0].remove();
+            //document.getElementById('div').removeChild(document.getElementById('insbefore'));
+            document.getElementById('div').innerHTML='';
+        }
+        function addinput(){
+            var parent=document.getElementById('form');
+             var input=document.createElement('input');
+             input.type='text';
+             input.name='name';
+             parent.append(input);
+
+        }
+    </script>
+</body>
+</html>

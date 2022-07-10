@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green{
+            background-color: green;
+            color: #FFF;
+            border: none;
+
+        }
+        .danger{
+            background-color: red;
+            color: #FFF;
+            border: none;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th></th>
+        </tr>
+        <tr class="row1">
+            <td><input type="text" name="fname" id="fname" ></td>
+            <td><input type="text" name="value" id="fname" ></td>
+            <td><button class="green" onclick="add(this)">+</button> <button class="danger" onclick="removee(this)">-</button></td>
+        </tr>
+       
+    </table>
+    <script>
+        function add(elem){
+              /*   let tr=document.createElement('tr');
+                let td1=document.createElement('td');
+                let td2=document.createElement('td');
+                let td3=document.createElement('td');
+                let input1=document.createElement('input');
+                let input2=document.createElement('input');
+                let button1=document.createElement('button');
+                let button2=document.createElement('button');
+
+                    input1.type='text';
+                    input1.name='fname';
+                    input1.id='fname';
+                    input2.type='text';
+                    input2.name='value';
+                    input2.id='fname';
+                    
+                    button1.className="green";
+                    button1.setAttribute('onclick',"add()");
+                    button1.innerHTML="+";
+                    button2.className="danger";
+                    button2.setAttribute('onclick',"removee(this)");
+                    button2.innerHTML="-";
+
+                    td1.appendChild(input1);
+                    td2.appendChild(input2);
+                    td3.appendChild(button1);
+                    td3.appendChild(button2);
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+ */
+
+                let tr=elem.closest('tr');
+                console.log(tr);
+                let tr2=tr.cloneNode(true);
+                    document.getElementById('table').appendChild(tr2);
+
+                    let button=document.getElementsByClassName('green');
+                    let buttonminus=document.getElementsByClassName('danger');
+
+                    for( let i=0;i<button.length-1;i++){
+                        button[i].style.display="none"   ;
+                        buttonminus[i].style.display="block"   ;
+                    }
+
+
+
+
+        }
+
+        function removee(elem){
+                elem.closest('tr').remove();
+        }
+    </script>
+</body>
+</html>

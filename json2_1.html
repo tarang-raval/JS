@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+     <head>
+     </head>
+     <body>
+
+        <script>
+              
+              var obj={name:"tarang"} ;  // object
+              var jsonobv={
+                "name":"tarang",
+                "age":30.5,
+                "status":true,
+                "status":null,
+                "result":[
+                    {"1st":12},
+                    {"1st":12}
+                ],
+                "current":{ "t":"ghg"}
+
+            };
+
+              // string
+              // number
+              // boolean
+
+
+              // objectname.propertname
+              
+              document.write(jsonobv.name);
+              // objectname[propertname]
+              document.write(jsonobv['age']);
+
+
+              for(let x in jsonobv){
+                        document.write('<br/>'+x+':'+jsonobv[x]);
+              }
+              console.log(jsonobv.result[0]['1st']);
+              console.log(JSON.stringify(jsonobv));
+              console.log(JSON.parse(JSON.stringify(jsonobv)));
+
+
+               let c='{"ssss":"sss"}';
+               console.log(JSON.parse(c));
+
+                let ar=[10,20,30,40,50];
+                 // {"s1":10}
+                var str='{';
+                i=1;
+                 for(let x of ar){
+                         str+='"s'+i+'":"'+x+'"'+((i<ar.length)?',':'');
+                         i++;
+                 }
+                  str+='}';
+                  console.log(JSON.parse(str));
+        </script>
+     </body>
+</html>

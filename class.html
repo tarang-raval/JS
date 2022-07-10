@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="h2"></h2>
+    <script>
+        class Student{
+              name='';
+              email='';
+              constructor(name,email){
+                    this.name=name;
+                  this.email=email;
+              }
+              setitem=function(name,email){
+                  this.name=name;
+                  this.email=email;
+              }
+              display(){
+                  document.write(`<h2>name = ${this.name} <br/> email= ${this.email} </h2>`);
+              }
+        }
+
+
+            const student1=new Student();
+            
+            student1.setitem('abc','abc@gmail.com');
+            student1.display();
+            const student2=new Student();
+
+            student2.setitem('xyz','xyz@gmail.com');
+            student2.display();
+
+            const s= [
+                new Student('a','a@gmail.com'),
+                new Student('b','b@gmail.com')
+            ];
+
+            for(let x of  s){
+                 console.log(x.name);
+            }   
+
+
+            for(let x in student1){
+                  console.log(typeof student1[x]);
+            }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

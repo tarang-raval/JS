@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let ar=[1,2,3,4,5,6];
+
+        // foreach
+        function multiply(value){
+            // ar[0]=1*1
+            // ar[1]=2*2
+           // array[index]=value*value;
+           if(value%2==0){
+           return  value*value
+           }else{
+               return value;
+           }
+        }
+
+        //ar.forEach(multiply);
+            var newarr=ar.map(multiply);
+
+
+        document.write(ar);
+        document.write('<br/><br/>');
+
+        document.write(newarr);
+        console.log(newarr);
+
+        var array=['tarang','abc','xyz']
+       var fiar=ar.filter(function(value,index,array){
+           //ar[index]=5;
+            return 5;
+       })  ;   
+
+       document.write('<br/><br/>');
+
+        document.write(ar);
+
+
+
+
+         let amount=ar.reduce(function(total,value,index,array){
+                    total+=value;
+                return total;
+         },100);    
+
+         alert(amount);
+         let totalamount=ar.reduce(function(total,value,index,array){
+                    total.push(value);
+                return total;
+         },[]); 
+
+         document.write('<br/><br/>');
+
+document.write(totalamount);
+
+let c=[];
+const numbers = [45, 4, 9, 16, 25];
+let sum = numbers.reduce(myFunction);
+
+function myFunction(total, value, index, array) {
+     //total.push(value);
+     return total+value;
+    
+}
+alert(sum);
+
+    </script>
+    
+</body>
+</html>

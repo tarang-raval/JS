@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let st="Heloo";
+            let st2='Heloo';
+
+
+
+
+            //alert(st.length);
+            //alert(st[0]);
+             for(let i=0;i<st.length;i++){
+                    document.write('<br/>'+st[i]);
+             }
+             // escape chracter (\)
+             let string=" heloo world  \
+             fhfjfjfjfjf";
+
+
+             let s='student\'s';
+             let s1="student's";
+
+             //alert('heloo \t hi')
+
+
+
+             // back tic   (`)
+
+
+              let st3=`
+              H
+              E 
+              L
+              O
+              O
+              "jhbdfjksdfsdjk"
+              student's
+              `;
+               //alert(typeof st3);
+
+
+               let a=10;
+               let b=20;
+
+               document.write('sum of '+a+' and '+b+' is '+(a+b));
+               document.write(`<br/>sum of `+a+` and `+b+` is `+(a+b));
+               document.write(`<br/>InterPolate <br/>sum of ${a} and  ${b} is ${(a+b)}`);
+               
+               document.write(`<br/>${(a>0)?'Postive':'negative'}`);
+               document.write(`<br/>${square(a)}`);
+
+
+             function square(a){
+                 return a*a;
+             }
+
+             alert(st.indexOf('o',4))
+             //alert(st.lastIndexOf('o'))
+
+             console.log(st.match(/heloo/ig));
+             console.log(st.match(/[aoh]/ig));
+             console.log(st.match(/[a-z]/g));
+             console.log(st.match(/[A-Z]/g));
+             console.log(st.match(/[0-9]/g));
+             console.log('hi heloo world !!'.match(/[a-zA-Z0-9]{2,5}/g));
+             console.log('hi'.match(/^[a-zA-Z]{2}$/g));
+
+             console.log('hi12'.match(/^[a-zA-Z]$/g));
+             console.log('hi12'.match(/[a-z]{2}|[0-9]{2}/g));
+
+             
+
+             var t="heloooooo world";
+             document.write('<br/>'+t.replace('o','a'));
+             document.write('<br/>'+t.replace(/o/g,'a'));
+             document.write('<br/>'+t.split(2));
+
+
+             alert('heloo'.slice(3));
+             alert('heloo'.substring(3));
+             alert('heloo'.substr(3));
+
+
+             Number("123");
+    </script>
+</body>
+</html>

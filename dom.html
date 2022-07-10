@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div{
+             color: red;
+        }
+        #div p{
+            color: green !important;
+        }
+    </style>
+</head>
+<body>
+       <div id="div" class="div center text blck" data-name="my div" aria-autocomplete="both"><div>Heloooo
+           <p>akshdfjfbd</p>
+           <p>jdvfsjdfghbjkds</p>
+       </div></div>
+       <div class="div">welcome</div>
+       <div >text content</div>
+
+
+       <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80"  id="img" width="100" height="">
+       <button onclick="findusingID()">Find Element using ID</button>
+       <button onclick="findusingclass()">Find Element using Class</button>
+       <button onclick="findusingtag()">Find Element using tag</button>
+       <button onclick="findqueryselector()">Find Element using tag</button>
+
+       <script>
+
+
+            /*
+
+                    .innerHTML
+                    .innerText
+
+                    queryselector
+            */
+
+            var ob={
+                a:10,
+                b:20,
+            }
+            ob.b=30;
+           function findusingID(){
+
+            alert(document.getElementById('div'));
+            console.log(document.getElementById('div'));
+            //alert(document.getElementById('div').innerHTML)
+            console.log(document.getElementById('div').innerText)
+            //document.getElementById('div').innerHTML="myjs  text"
+            document.getElementById('div').innerHTML="<p><b>myjs  text</b></p>"
+            alert(document.getElementById('div').id)
+            alert(document.getElementById('div').className);
+
+
+            alert(document.getElementById('img').src);
+            console.log(document.getElementById('div').getAttribute('data-name'));
+            console.log(document.getElementById('div').getAttribute('id'));
+            console.log(document.getElementById('div').getAttribute('class'));
+            console.log(document.getElementById('div').getAttribute('aria-autocomplete'));
+
+           }
+
+           function findusingclass(){
+            alert(document.getElementsByClassName('div'));
+            console.log(document.getElementsByClassName('div'));
+            document.getElementsByClassName('div')[0].style.color="red";
+            let div=document.getElementsByClassName('div');
+                for(let x of div){
+                      x.style.color="green";
+                }
+           }
+
+           function findusingtag(){
+            alert(document.getElementsByTagName('div'));
+            console.log(document.getElementsByTagName('div'));
+            //document.getElementsByTagName('div')[0].style.color="red";
+           }
+
+           function findqueryselector(){
+                  
+                    console.log(document.querySelector('#div p').innerHTML)
+                    console.log(document.querySelectorAll('#div p'))
+
+
+                    console.log(document.querySelector('body').children)
+           }
+       </script>
+</body>
+</html>

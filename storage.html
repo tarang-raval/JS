@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <button onclick="store()">Store</button>
+    <button onclick="get()">get</button>
+    <button onclick="remove()">Remove</button>
+    <script>
+        function store(){
+
+              let text= document.getElementById('text').value;
+
+              localStorage.setItem('name',JSON.stringify({"name":text}));
+              sessionStorage.setItem('name2',text);
+        }
+        function get(){
+             alert(JSON.parse(localStorage.getItem('name')));
+             alert(sessionStorage.getItem('name2'));
+        }
+        function remove(){
+              localStorage.removeItem('name');
+              sessionStorage.removeItem('name2');
+        }
+            
+        function getall(){
+              let len=localStorage.length;
+               
+            var str='';
+               for(let i=0;i<len;i++){
+                    str+=localStorage.getItem(localStorage.key(i));
+               }
+               alert(str);
+        }  
+        getall(); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="elem">
+        <div class="child" >
+
+        </div>
+        <div class="child" >
+
+        </div>
+        <div class="child" >
+
+        </div>
+        <div class="child" >
+
+        </div>
+    </div>
+    <button onclick="add()">Add</button>
+    <button onclick="remove()">Remove</button>
+    <button onclick="insertbefore()">insertbefore</button>
+
+
+    <script>
+            function add(){
+                     
+                var p=document.createElement('p');
+                var span=document.createElement('span');
+                span.classList.add('text');
+                span.style.color="green";
+                span.id="text";
+
+                 var text=document.createTextNode('<b>Helooo</b>');
+                    // <p></p>  
+                    //  helooo
+                    //<p>helooo</p>
+                 span.appendChild(text);
+                 p.appendChild(span);
+                 p.innerHTML=`<span class="text" id="text" style="color:red">Helooo</span>`;
+
+                 document.getElementById('elem').appendChild(p);
+
+                console.log(p);
+            }
+            //add();
+            function remove(){
+
+                //document.getElementById('elem').remove();
+                document.getElementById('elem').removeChild(document.getElementById('text').parentNode);
+                document.getElementById('elem')
+            }
+
+            function insertbefore(){
+            let div=document.getElementById('elem');
+            var p=document.createElement('p');
+                var span=document.createElement('span');
+                span.classList.add('text');
+                span.style.color="green";
+                span.id="text";
+
+                 var text=document.createTextNode('<b>Helooo</b>');
+                 span.appendChild(text);
+                 p.appendChild(span);
+                 let p2=p.cloneNode(true);
+                 div.insertBefore(p,document.getElementsByClassName('child')[1]);
+                 document.getElementsByTagName('body')[0].insertBefore(p2,div);
+
+
+            }
+    </script>
+</body>
+</html>

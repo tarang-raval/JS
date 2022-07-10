@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text{
+             font-size: 20px;
+             color: green;
+             background-color: yellow;
+        }
+        .hidden{
+             display: none !important;
+        }
+    </style>
+
+</head>
+<body>
+    <p id="p" class="abcd">Helooo</p>
+
+    <button onclick="chcolor()">Change color</button>
+    <button onclick="chclass()">Change class</button>
+
+
+        <button onclick="hide()">Hide</button>  <button onclick="show()">show</button>
+
+        <div id="box">
+            <h2>Hide/ show</h2>
+        </div>
+
+
+    <script>
+        function chcolor(){
+                document.getElementById('p').style.color="red";
+                document.getElementById('p').style.fontSize="24px";
+
+                alert(document.getElementById('p').style.fontSize);
+        }
+
+        function chclass(){
+            //document.getElementById('p').className='text';
+            console.log();
+            document.getElementById('p').classList.add('text');
+            document.getElementById('p').classList.add('text');
+            document.getElementById('p').classList.add('text');
+            document.getElementById('p').classList.add('text');
+            document.getElementById('p').classList.add('text');
+
+        }
+
+        function hide(){
+            //document.getElementById('box').style.display='none';
+            document.getElementById('box').classList.add('hidden');
+            alert(document.getElementById('box').style.display);
+            let para = document.getElementById('box');
+            let compStyles = window.getComputedStyle(para);
+        alert(compStyles.getPropertyValue('display') );
+
+
+        }
+        function show(){
+            //document.getElementById('box').style.display='block';
+            document.getElementById('box').classList.remove('hidden');
+
+        }
+    </script>
+</body>
+</html>

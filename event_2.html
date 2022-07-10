@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <input type="text" class="control" id="name" name="name"  placeholder="name" onfocus="this.style.outline='1px solid red'"  onblur="this.style.outline='1px solid black'" onchange="alert('change')">
+      <span id="name_error"></span>
+      
+      <input type="password" class="control" name="password" id="password" placeholder="password" >
+      <span id="password_error"></span>
+      
+      <select id="city" onchange="getselect()" multiple>
+          <option value="1">Vadodarda</option>
+          <option value="2">Ahmedabad</option>
+          <option value="3">Surat</option>
+      </select>
+      <input type="radio" name="gender" value="male"   id="male" onclick="check()" > male
+      <input type="radio" name="gender" value="female" id="female" onclick="check()" >female
+      <script>
+            function getselect(){
+                let city =document.querySelectorAll('#city>option:checked');
+                var str='';
+                for(let x of city){
+                      str+=x.value+',';
+                }
+                alert(str);
+
+            }
+            var c=document.getElementsByClassName('control');
+             for( let x of c){
+                    //x.addEventListener('keyup',function(e){validate(e,this)}) ;
+                    x.addEventListener('blur',function(e){validate(e,this)}) ;
+             }
+             function validate(e,element){
+                       
+                if(element.value==""){
+                     document.getElementById(element.id+'_error').innerHTML='please enter '+element.name;
+                }
+                
+             }
+             function check(element){
+                var m=document.getElementById('male');
+                var f=document.getElementById('female');
+                var ch=document.querySelector('input[name="gender"]:checked');
+                alert(ch.value);
+
+
+               /*   alert(m.checked);
+                 alert(f.checked);
+                 if(m.checked){
+                     alert(m.value)
+                 }
+                 if(f.checked){
+                     alert(f.value);
+                 } */
+             }
+      </script>
+</body>
+</html>

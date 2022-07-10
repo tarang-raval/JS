@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @keyframes move {
+            from{transform: scale(0,0);}
+            to{transform: scale(2,2);}
+        }
+       
+        @keyframes move2 {
+         0% {left:0;top:0}
+         25% {left:100px;top:0;background-color: aquamarine; transform: scale(2,2);}
+         50% {top:100px; left:100px; background-color: aquamarine;transform:rotate(180deg);}
+         75% {left: 0;top:100px}
+         100% {top:0;left:0}
+
+        }
+
+        .circle{
+            position: relative;
+            width: 10px;
+            height: 10px;
+            /* border-radius: 50%; */
+            background-color: brown;
+            animation-name:move ;
+            animation-duration: 4s;
+            /* animation-iteration-count:infinite; */
+            /* animation-direction: alternate-reverse; */
+            /* animation-timing-function: ease-in-out; */
+            animation-fill-mode:both;
+            animation: move 5s linear  infinite alternate;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+
+    <h1 class="animate__animated animate__bounce rep-6">An animated element</h1>
+</body>
+</html>

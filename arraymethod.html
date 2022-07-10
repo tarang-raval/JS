@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+            let ar=[1,6,9,87,100];
+
+             document.write(ar.toString());
+             document.write('<br/>');
+             document.write('<ul><li>'+ar.join('</li><li>')+'</li></ul>');
+
+             /*
+               <ul><li>1</li><li>2</li></ul>
+             */
+             document.write('<br/>');
+            document.write(ar.slice(1,4));
+            document.write('<br/>');
+            document.write(ar.slice(-1,-3));
+
+
+                let newarray=ar.filter(function(value,index,array){
+                         
+                    return (value%2==0);
+                       
+                });
+                console.log(newarray);
+
+                //value=1, index=0, array =ar
+                //value=6, index=1, array =ar
+
+
+                /*
+                     function functionname( argument1,argument2 ..... ){
+
+                        let argument1=10,argument2=20
+
+
+                        return a;
+                     }
+
+
+                     // calll
+                       
+                     sum(10,20);
+                 */
+                    
+                 function  sum(x,y){
+                     //return x;
+                      //let x=10,y=20;
+                      // local variable
+                    //let z=x+y;  
+                       return (x+y);
+                 }
+                 
+                    z=sum(10,30);
+                    alert(z);
+                 document.write(sum);
+                 alert(sum(50,30))
+                 ;
+
+
+
+                 const fun=function(x,y){
+
+                     console.log(arguments);
+                    alert(x+y);
+                 }
+
+                 fun(60,100,60,9,2,8,9,2,7,72,8,87,4,54,87,97,89,7468,4,987);
+
+                 // arraow function
+                  //let sum2=(x,y)=>{ return x+y};
+                  //alert(sum2(10,500));
+
+
+                  function sum2(x,y,display){
+
+
+                            display(x+y);
+                  }
+
+                  sum2(1,2,log);
+                  sum2(1,2,alert2);
+
+
+                  function log(sum){
+                        console.log(sum)
+                  }
+                  function alert2(sum){
+                        alert(sum);
+                  }
+    
+    </script>
+</body>
+</html>

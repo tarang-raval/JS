@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="openw()">Open</button>
+    <button onclick="closew()">Close</button>
+    <button onclick="reload()">reload</button>
+    <button onclick="history.back()">back</button>
+
+    <script>
+        let win;
+        function openw(){
+
+            win=window.open("http://google.com","_blank","toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+//             window.open("https://www.w3schools.com", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+        }
+
+        function closew(){
+            win.close();
+        }
+        function reload(){
+            location.reload(true);
+        }
+    </script>
+</body>
+</html>

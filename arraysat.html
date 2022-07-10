@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p"></p>
+    <ul><li>1</li><li>2</li><li>3</li></ul>
+    <script>
+        let c=10;
+
+
+        // array
+        let a=[];
+        //  key/index value
+        let b=[1,2,3];
+        //     0,1,2
+            b[0]=20;
+            //alert(b[0]);
+        //document.getElementById('p').innerHTML=b;
+        // intialization 0
+        //  length    b.length
+
+
+         var st="";
+        for (let index = 0; index < b.length; index++) {
+            st+='<br/>'+b[index];
+        }
+
+        document.getElementById('p').innerHTML=st;
+
+
+        // for of
+        st="";
+        for (let x of b) {
+            st+="/"+x;
+        }  
+        document.getElementById('p').innerHTML=st; 
+   
+        a[a.length]=10;
+        a[a.length]=10;
+        a.push(12.20,90,90,40)
+        /*a.pop();
+        a.pop();*/
+
+
+        //delete a[0];
+        a.shift();
+        a.unshift(10,50,90,70);
+        console.log(a);
+        // a.splice(start position,delete count,new add lement)
+        a.splice(a.length,0)
+
+
+        console.log(a);
+
+        let t=['c','m','a'];
+
+ var st2="The Pizza  ";
+ let i=0;
+        for(let x of t){
+             st2+=(t.length-1==i)?x:x+' and ';
+             i++;
+        }
+        console.log(st2);
+
+
+        document.write(t.join(' and '));
+        document.write('<ul><li>'+t.join('</li><li>')+'</li></ul>');
+
+        console.log(a.lastIndexOf('a'));
+
+
+        var value=a.findIndex(function(value){
+             return value>50;
+        });
+
+        console.log(value);
+        var value=a.filter(function(value){
+             return value>50;
+        });
+        console.log(value);
+        console.log(a.some(function(value){
+             return value>50;
+        }))
+
+        let st4='';
+        let a4=[];
+        
+        a.forEach(function(value){
+            if(value>50){
+            st4+='<br/>'+value;
+            a4.push(value);
+            }
+        });
+        document.write(st4);
+        document.write(a4);
+
+        let a5=a.map(function(value){
+            return (value>50)?value*2:value
+        });
+
+        console.log(a5);
+        var total=0;
+        a.forEach(function(value){
+                total+=value;
+        });
+        alert(total);
+     
+        var t2=a.reduce(function(u,value){
+                 u.push(value);
+                 return u;
+        },[]);
+        alert(t2);
+
+
+// ul>
+
+        
+            
+
+        
+        
+
+    </script>
+</body>
+</html>

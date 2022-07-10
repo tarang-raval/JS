@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert(12)"></button>
+
+    <p id="p"></p>
+    <input type="text" id="text" placeholder="Enter name"  >
+
+
+    <p id="sum"></p>
+    <p id="concat"></p>
+    <p id="multi"></p>
+
+
+
+    <script src="main.js"></script>
+    <script>
+        var a=10;
+        var ob=document.getElementById('p');
+        document.getElementById('p').innerHTML="hellooo";
+      /*   documen t.getElementsByClassName('p'2).innerHTML="hellooo";
+        document.getElementsByTagName('p').innerHTML="hellooo"; */
+        //document.getElementById('text').value="text input";
+
+        /* $('#p')
+        $('.p')
+        $('p').html('ujuu')
+        $('p').val('ujuu')
+          */
+
+
+          /*
+
+                1234567,46.58,58e+8
+                avfjsd;jkfhsd
+                true/false
+
+                var 123  // invalid
+                var abc // valid
+                var a123  // valid
+                var _a123  // valid
+
+          */
+
+           var a=10;
+           a="ssss";
+
+           let s="let variable";
+
+        //abc=50;
+
+        let  abc;
+
+        //const a=10;
+
+        {
+             let b=20;
+             var c="variable";
+        }
+
+        //console.log(b);
+        console.log(abc);
+
+        /*
+
+         Arithmetic
+
+          + - * / %
+
+        conditional operator
+           > < >= <= == !=  ===
+
+         logical operator
+
+            &&- and  || - or !
+          
+            increment / decrement
+
+             ++ --
+
+             a=a+1;
+             a=a-1;
+        
+         */ 
+
+        document.getElementById('sum').innerHTML=10+20/5-2;
+        document.getElementById('concat').innerHTML=('10'+20);
+        document.getElementById('multi').innerHTML=('10'*20);
+        
+        //()/*+-
+
+         // 10+((20/5)+20)-2;
+
+
+         // conditonal operator
+
+        // alert(10==10);
+
+
+        /* conditional statement
+
+          1. if()
+                  if(condition)
+                    {
+                          statement of block;
+                    }
+          2. if()...else
+                      if(condition)
+                    {
+                          statement of block;
+                    }else{
+                         statement of block;
+                    }
+          3. if()...else if()...else
+        */  
+
+              let d=0;
+          if(d==0){
+               alert('123');
+          }
+          if(d>=0){
+               alert('positive');
+          }else{
+               alert('negative');
+          }
+              
+
+        let p=6;
+
+        if(p==0){
+          alert('value is zero');
+        }else if(p>0){
+          alert('value is postive');
+        }else{
+          alert('value is negative');
+        }
+
+
+         p=100; 
+         let q=12,r=9;
+         if(p>0 || (p>q &&  p>r)){
+
+
+
+         if((p>0) || (p>q &&  p>r)){
+            document.write('p is greater than q ,r');
+         }else if(q>p && q>r){
+           document.write('q is greater than p ,r');
+         }else{
+          document.write('r is greater than q ,p');
+         }
+
+    </script>
+</body>
+</html>

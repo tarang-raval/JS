@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        .gallery{
+            display: flex;
+            flex-wrap: wrap;
+        }
+           .gallery>div{
+                width: 25%;
+               
+           }
+           .hide{
+               display: none ;
+           }
+           [data-filter="car"]{
+               border:2px solid red
+           }
+
+    </style>
+</head>
+<body>
+    <button onclick="filter('all')">All</button>
+    <button onclick="filter('nature')">Nature</button>
+    <button  onclick="filter('car')">Car</button>
+    <button  onclick="filter('bike')">bike</button>
+    <div class="gallery">
+        <div class="nature" data-filter="nature">
+            <img src="https://www.iucn.org/sites/dev/files/content/images/2020/shutterstock_1458128810.jpg">
+        </div>
+        <div class="car">
+            <img src="https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit-640x354.jpg">
+        </div>
+        <div class="nature" data-filter="nature">
+            <img src="https://www.iucn.org/sites/dev/files/content/images/2020/shutterstock_1458128810.jpg">
+        </div>
+        <div class="car">
+            <img src="https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit-640x354.jpg">
+        </div>
+        <div class="nature" data-filter="nature">
+            <img src="https://www.iucn.org/sites/dev/files/content/images/2020/shutterstock_1458128810.jpg">
+        </div>
+        <div class="car" data-filter="car">
+            <img src="https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit-640x354.jpg">
+        </div>
+        <div class="nature" data-filter="nature">
+            <img src="https://www.iucn.org/sites/dev/files/content/images/2020/shutterstock_1458128810.jpg">
+        </div>
+        <div class="car" data-filter="car">
+            <img src="https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit-640x354.jpg">
+        </div>
+        <div class="nature" data-filter="nature">
+            <img src="https://www.iucn.org/sites/dev/files/content/images/2020/shutterstock_1458128810.jpg">
+        </div>
+        <div class="car" data-filter="car">
+            <img src="https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit-640x354.jpg">
+        </div>
+        <div class="nature" data-filter="nature">
+            <img src="https://www.iucn.org/sites/dev/files/content/images/2020/shutterstock_1458128810.jpg">
+        </div>
+        <div class="car" data-filter="car">
+            <img src="https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit-640x354.jpg">
+        </div>
+        <div class="nature" data-filter="nature">
+            <img src="https://www.iucn.org/sites/dev/files/content/images/2020/shutterstock_1458128810.jpg">
+        </div>
+        <div class="car" data-filter="car">
+            <img src="https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit-640x354.jpg">
+        </div>
+        <div class="bike" data-filter="bike">
+            <img src="https://5.imimg.com/data5/QQ/JC/FY/SELLER-45461290/yamaha-yzf-r15-v-3-0-bike-500x500.jpg">
+        </div>
+
+
+    </div>
+    <script>
+         function filter(classname){
+                    
+            var div=document.querySelectorAll('.gallery>div');
+            for(let x of div){
+                    if(classname=='all' || classname==''){
+                        x.classList.remove('hide') 
+                    }
+                    else if(x.getAttribute('data-filter')==classname){
+                        x.classList.remove('hide') ;
+                    }else{
+                        x.classList.add('hide') ;
+                    }
+            }
+         }
+    </script>
+</body>
+</html>

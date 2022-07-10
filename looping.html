@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+             looping
+                    intialization
+                    control // how many times repeat
+                     increment/decrement  --  reach to conditon         
+             1. While()
+                  
+                         while(condition){
+                              statement of block
+                         }
+            2. do{}.. while()
+                            do{
+
+                            }while(condition);
+            3. for()
+                
+                            for(intialization;condition;increment/decrement){
+                                  statement
+                            }
+
+        */
+
+                document.write('=====================While================');
+
+
+        /* 1 2 3 4 5 6 7 8 9 10  */
+
+                    let i=1;
+                        
+                     while(i<=10){
+
+                        ///if(i%2==0){
+                            document.write('<br/>'+i);
+                       // }
+                            i++;
+
+                            //  i=i+1
+                            // i+=2   == i=i+2
+
+                     }
+
+                     document.write('=====================================');
+
+                     let t=true;
+                     let j=100;
+                     while(t){
+                        
+                        if(j==110){
+                            t=false;
+                        }
+                        document.write('<br/>'+j);
+                        j++;
+
+                     }
+
+                     document.write('<br/>=====================do-While================');
+                       
+                     i=1;
+                      do{
+                        document.write('<br/>'+i);
+                        i++;
+                      }while(i>=10);
+
+                      ;
+                      i=1;
+                      let c;
+                      do{
+                        c=confirm('are you continue');
+                         document.write(c);
+                      }while(c==true);
+
+                      document.write('<br/>=====================For Loop================');
+
+
+                      for(i=1;i<=10;i++){
+                        document.write('<br/>'+i);
+                      }
+
+                       for(i=1,j=10;i<=10,j>=1;i++,j--){
+                        document.write('<br/>'+i+'&nbsp;&nbsp;&nbsp;&nbsp;'+j);
+                      }
+
+
+
+
+
+    </script>
+
+</body>
+</html>

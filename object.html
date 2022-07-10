@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let c=10;
+        let c1=function(){}
+            /*
+                 on={
+                     propertyname:value,
+                     propertyname:function(){
+
+                     }
+
+                 }
+            */
+        let ob3={
+            'my text':"fffbjhf",
+            dis:function(){
+                alert('ob3 function call');
+            }
+        };
+         let ob={
+             a:10,
+             b:20,
+             sum:function(a,b){
+                 alert(this.a+this.b);
+                 //this.display(); 
+                 //display2();
+                 ob3.dis();
+             },
+             display:function(){
+                    document.write(`a=${this.a} and b=${this.b}`);
+             }
+         }
+
+         function display2(){
+                alert('outside function call');
+         }
+
+         // objectname.propertyname
+         // objectname['propertyname']
+
+         document.write(ob.a);
+         document.write(ob['b']);
+
+         ob.sum(5,10);
+         ob.a=50;
+        c=c1;
+         ob2={...ob};
+         ob2.b=100;
+         ob2.sum();
+
+         alert(ob3['my text']);
+
+         console.log(this);
+
+
+         let n=10;
+         let n2=n;
+
+         ob1=ob;
+         ob1.a=30;
+         ob.sum();
+
+
+         // let v={...objectname}
+
+    </script>
+</body>
+</html>

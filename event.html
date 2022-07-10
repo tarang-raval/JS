@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <button id="btn" onclick="this.innerHTML='you are clicked'" onmouseover="mouseover(this)" onmouseout="mouseout()">Click</button>
+     <button class="btnh"  >Click</button>
+     <button class="btnh"  >Click</button>
+     <button class="btnh"  >Click</button>
+     <button class="btnh"  >Click</button>
+     <img src="https://freeiconshop.com/wp-content/uploads/edd/image-outline-filled.png" onmouseover="this.src='https://cdn-icons-png.flaticon.com/512/1160/1160358.png'"  onmouseout="this.src='https://freeiconshop.com/wp-content/uploads/edd/image-outline-filled.png'" >
+
+  
+     <div id="div2">This example uses the addEventListener() method to attach a "wheel" event to a DIV element. Roll the mouse wheel over me - either up or down!</div>   
+     <div id="myDIV">This example uses the addEventListener() method to attach a "wheel" event to a DIV element. Roll the mouse wheel over me - either up or down!</div>
+     <script>
+        function fun(){
+                     this.style.fontSize="18px";
+              }
+        document.getElementById('div2').addEventListener('wheel',fun);
+       
+          document.getElementById('btn').onmouseover=function(){
+                //alert('dddd');
+                mouseover(document.getElementById('btn'));
+          }
+
+          
+          function mouseover(elem){
+            // let v=document.getElementById('btn');
+            elem.style.color="black";
+            elem.style.backgroundColor="white";
+            
+                
+          }
+          function mouseout(){
+            let v=document.getElementById('btn');
+            v.style.color="black";
+            v.style.backgroundColor="white";
+            
+            alert(this.tagName);
+          }
+          function clickcall(){
+           
+                 alert('dsfsdfsdfsdf');
+          
+          }
+          document.getElementById('btn').addEventListener('click',function(){
+                 alert(this.tagName);
+          });
+          document.getElementById('btn').addEventListener('click',clickcall);
+          document.getElementById('btn').removeEventListener('click',clickcall)
+
+
+
+          for(let x of document.getElementsByClassName('btnh')){
+              x.addEventListener('mouseover',function(){
+
+                this.style.color="red";
+                this.style.backgroundColor="green";
+
+                });
+                x.addEventListener('mouseout',function(){
+
+                this.style.color="black";
+                this.style.backgroundColor="white";
+
+                });
+                x.addEventListener('mousedown',function(){
+
+                  this.style.color="green";
+                  this.style.backgroundColor="red";
+
+                  });
+                  x.addEventListener('mouseup',function(){
+
+                    this.style.color="yellow";
+                    this.style.backgroundColor="red";
+
+                    });
+              }
+          
+              document.getElementById("div2").addEventListener('wheel',fun);
+              document.getElementById("myDIV").addEventListener("wheel", myFunction);
+
+function myFunction() {
+  this.style.fontSize = "35px";
+}
+
+
+     </script>
+</body>
+</html>

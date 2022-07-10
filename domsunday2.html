@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="child">
+    <div class="child">
+         
+    <div id="subchild">
+        <p id="p">Paragrpah</p>
+        <button id="button">Button</button>
+        <div>
+            <p>sdjfhsdjfb</p>
+        </div>
+    </div>
+    </div>
+
+    <button id="parent">Get parent</button>
+    <button id="child">Get child</button>
+    <button id="next">Get next</button>
+
+    <script>
+
+        document.getElementById('parent').addEventListener('click',function(){
+                    alert(document.getElementById('p').parentNode.className);
+                    alert(document.getElementById('p').parentNode.parentElement.className);
+                    alert(document.getElementById('p').closest('.child').className);
+                    var i=0;
+                    var  ch=document.getElementById('p');
+                    var flag=true;
+                    while(flag){
+
+                         ch=ch.parentElement;
+                         console.log(ch);
+                         if(ch==null){
+                            flag=false;
+                         }
+                         /* let ch2 =ch.closest('.child');
+                          console.log(ch2.closest('.child'));
+                          
+                          flag=false;
+                          ch =ch.closest('.child');
+                          console.log(ch);
+                          
+                          ch =ch.closest('.child');
+                          console.log(ch); */
+                          
+
+                    }
+        });
+        document.getElementById('child').addEventListener('click',function(){
+
+            console.log(document.getElementById('subchild').childNodes);
+            console.log(document.getElementById('subchild').children[2].children);
+            console.log(document.getElementById('subchild').querySelectorAll('button'));
+        });
+        document.getElementById('next').addEventListener('click',function(){
+
+        console.log(document.getElementById('p').nextElementSibling);
+        console.log(document.getElementById('button').previousElementSibling);
+        console.log(document.getElementById('p').attributes);
+        console.log(document.getElementById('p').ATTRIBUTE_NODE);
+        
+        
+        });
+
+
+        ob={name:"aa"};
+        ob2={...ob};
+        ob2.name='aaaaaaaaaa';
+        alert(ob.name);
+
+    </script>
+</body>
+</html>
